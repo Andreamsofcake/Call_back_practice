@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+var functions = require('./index');
+var setReminder = functions.setReminder;
+
+
+// use reminder function with input arguments
+console.log(process.argv); // the args are in process.argv

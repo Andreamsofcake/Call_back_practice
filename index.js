@@ -4,13 +4,12 @@
  * @param {Date} date Input date and time.
  * @param {Function} fn Timer goes of at the date and time.
  */
- 
-module.exports.setReminder = function(date, fn) {
-	console.log(date)
-  console.log('Reminder will go off at %d:%d', date('hour'),date('minute'));
-  setTimeout(function() {
 
-    console.log('Thing one');
-    fn();
-  }, 3000);
+module.exports.setReminder = function(date, cb) {
+	var nowMiliseconds = Date.now();
+	var delay = date - nowMiliseconds;
+	console.log(date);
+	console.log(delay);
+	setTimeout(cb, delay); 
+
 };
